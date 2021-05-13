@@ -43,7 +43,7 @@ function isCollide(snake) {
   }
 
   // If you bump into the head
-  if (snake[0].x >= 18 || snake[0].x <= 0 || snake[0].y >= 18 || snake[0].y <= 0)
+  if (snake[0].x >= 19 || snake[0].x <= 0 || snake[0].y >= 19 || snake[0].y <= 0)
     return true;
   else
     return false;
@@ -55,23 +55,30 @@ function gameEngine() {
   if (isCollide(snakeArr)) {
     gameOverSound.play();
     musicSound.pause();
-    inputDir = [{
+    inputDir = {
       x: 0,
       y: 0
-    }];
+    };
     alert("Game Over. Press any key to play again!");
     snakeArr = [{
       x: 13,
       y: 15
     }];
-    musicSound.play();
+    //musicSound.play();
     score = 0;
-
+    scoreBox.innerText='Score:'+score;
   }
 
   //if you have eaten the food, increment the score and regenrate the food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     foodSound.play();
+    score+=1;
+    if(score>hiscoreval){
+      hiscoreval = score;
+      localStorage.setItem('hiscore',JSON.stringify(hiscoreval));
+      hiscoreBox.innerHTML = 'High Score:'+hiscoreval;
+    }
+    scoreBox.innerText='Score:'+score;
     snakeArr.unshift({
       x: snakeArr[0].x + inputDir.x,
       y: snakeArr[0].y + inputDir.y
@@ -119,12 +126,18 @@ function gameEngine() {
 }
 
 
-
-
-
-
-
 // Main logic starts here
+
+let hiscore= localStorage.getItem('hiscore');
+if(hiscore===null){
+  hiscoreval = 0;
+  localStorage.setItem('hiscore',JSON.stringify(hiscoreval));
+}
+else{
+  hiscoreval=JSON.parse(hiscore);
+  hiscoreBox.innerHTML = 'High Score:'+hiscoreval;
+}
+
 window.requestAnimationFrame(main);
 // if the user presses any key on the keyboard 
 // the this action will be fired
@@ -134,7 +147,7 @@ window.addEventListener('keydown', e => {
     y: 1
   } //start the game
   moveSound.play();
-  musicSound.play();
+  //musicSound.play();
   switch (e.key) {
     case "ArrowUp":
       console.log("ArrowUp");
@@ -161,5 +174,6 @@ window.addEventListener('keydown', e => {
       break;
   }
 
+ 
+});
 
-})

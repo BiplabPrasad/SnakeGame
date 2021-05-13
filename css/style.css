@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 *{
   padding: 0;
   margin: 0;
@@ -13,8 +14,28 @@
   align-items: center ;
 }
 
+#scoreBox{
+  position: absolute;
+  top: 9px;
+  right: 200px;
+  font-size: 39px;
+  font-weight: bold;
+  font-family: 'New Tegomin', serif;
+  color:black;
+}
+
+#hiscoreBox{
+  position: absolute;
+  top: 50px;
+  right: 112px;
+  font-size: 39px;
+  font-weight: bold;
+  font-family: 'New Tegomin', serif;
+  color:black;
+}
+
 #board{
-  background-color: lightgoldenrodyellow;
+  background: radial-gradient(white,#f2f2f2);
   width: 90vmin;
   height: 92vmin;
   border: 2px solid black;
@@ -31,7 +52,7 @@
 }
 
 .snake{
-  background:linear-gradient(purple,rgb(236, 167, 236));
+  background:radial-gradient(rgb(236, 167, 236),purple);
   border: 0.25vmin solid white;
   border-radius: 12px;
 }
