@@ -147,7 +147,7 @@ window.addEventListener('keydown', e => {
     y: 1
   } //start the game
   moveSound.play();
-  //musicSound.play();
+  musicSound.play();
   switch (e.key) {
     case "ArrowUp":
       console.log("ArrowUp");
