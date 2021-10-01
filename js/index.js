@@ -86,8 +86,8 @@ function gameEngine() {
     let a = 2;
     let b = 16;
     food = {
-      x: Math.round(a + (b - a) * Math.random()),
-      y: Math.round(a + (b - a) * Math.random())
+      x: Math.round(a + (b - a) * Math.random()+0),
+      y: Math.round(a + (b - a) * Math.random()+0)
     }
   }
 
@@ -100,7 +100,9 @@ function gameEngine() {
   }
   snakeArr[0].x += inputDir.x;
   snakeArr[0].y += inputDir.y;
-
+  snakeArr[0].x += 0;
+  snakeArr[0].y += 0
+  
   // Part 2: Display the snake and food
   // Display the snake
   board.innerHTML = "";
