@@ -45,14 +45,14 @@
 }
 
 .head{
-  background: linear-gradient(red,rgb(200, 70, 0));
-  border: 2px solid purple;
+  background:radial-gradient(rgb(138, 0, 0),rgb(238, 0, 0));
+  border: 2px solid rgb(194, 0, 0);
   transform: scale(1.02);
   border-radius: 9px;
 }
 
 .snake{
-  background:radial-gradient(rgb(236, 167, 236),purple);
+  background:radial-gradient(rgb(167, 236, 167),rgb(11, 128, 0));
   border: 0.25vmin solid white;
   border-radius: 12px;
 }
