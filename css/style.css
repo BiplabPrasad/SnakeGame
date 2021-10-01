@@ -45,7 +45,7 @@
 }
 
 .head{
-  background: linear-gradient(red,rgb(255, 72, 0));
+  background: linear-gradient(red,rgb(200, 70, 0));
   border: 2px solid purple;
   transform: scale(1.02);
   border-radius: 9px;
