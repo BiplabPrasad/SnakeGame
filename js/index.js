@@ -9,7 +9,7 @@ const gameOverSound = new Audio('music/gameover.mp3');
 const moveSound = new Audio('music/move.mp3');
 const musicSound = new Audio('music/music.mp3');
 
-let speed = 6;
+let speed = 4;
 let lastPaintTime = 0;
 let score = 0;
 let snakeArr = [{
@@ -86,8 +86,8 @@ function gameEngine() {
     let a = 2;
     let b = 16;
     food = {
-      x: Math.round(a + (b - a) * Math.random()),
-      y: Math.round(a + (b - a) * Math.random())
+      x: Math.round(a + (b - a) * Math.random()+0),
+      y: Math.round(a + (b - a) * Math.random()+0)
     }
   }
 
@@ -100,7 +100,9 @@ function gameEngine() {
   }
   snakeArr[0].x += inputDir.x;
   snakeArr[0].y += inputDir.y;
-
+  snakeArr[0].x += 0;
+  snakeArr[0].y += 0
+  
   // Part 2: Display the snake and food
   // Display the snake
   board.innerHTML = "";
@@ -147,28 +149,28 @@ window.addEventListener('keydown', e => {
     y: 1
   } //start the game
   moveSound.play();
-  //musicSound.play();
+  musicSound.play();
   switch (e.key) {
     case "ArrowUp":
-      console.log("ArrowUp");
+     // console.log("ArrowUp");
       inputDir.x = 0;
       inputDir.y = -1;
       break;
 
     case "ArrowDown":
-      console.log("ArrowDown");
+     // console.log("ArrowDown");
       inputDir.x = 0;
       inputDir.y = 1;
       break;
 
     case "ArrowLeft":
-      console.log("ArrowLeft");
+     // console.log("ArrowLeft");
       inputDir.x = -1;
       inputDir.y = 0;
       break;
 
     case "ArrowRight":
-      console.log("ArrowRight");
+     // console.log("ArrowRight");
       inputDir.x = 1;
       inputDir.y = 0;
       break;
