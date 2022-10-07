@@ -5,63 +5,70 @@
 }
 
 .body{
-  background: url("../img/bg.jpg");
+  background: url(../img/bg.jpg);
   min-height: 100vh;
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
-  align-items: center ;
+  flex-direction: column;
+  flex-wrap: wrap;
+   
+   align-items: center ; 
 }
 
+#scoreWrapper{
+  padding: 2px;
+  margin: 2px 4rem;
+  align-self: flex-end;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 1px rgb(208, 198, 198);
+  border: 2px solid rgba(29, 28, 28, 0.946);
+  box-shadow: 5px 5px rgba(42, 41, 41, 0.585);
+  background-color: rgba(226, 228, 129, 0.415);
+
+
+}
 #scoreBox{
-  position: absolute;
-  top: 9px;
-  right: 200px;
-  font-size: 39px;
+  font-size: 30px;
   font-weight: bold;
   font-family: 'New Tegomin', serif;
-  color:black;
+  float: top;
 }
 
 #hiscoreBox{
-  position: absolute;
-  top: 50px;
-  right: 112px;
-  font-size: 39px;
+  font-size: 30px; 
   font-weight: bold;
   font-family: 'New Tegomin', serif;
-  color:black;
 }
 
 #board{
-  background: radial-gradient(white,#f2f2f2);
-  width: 90vmin;
-  height: 92vmin;
-  border: 2px solid black;
+ background-color: rgb(0, 0, 0);
+  width: 80vmin;
+  height: 80vmin;
+  box-shadow: 5px 5px 5px rgba(15, 14, 14, 0.544);
   display: grid;
   grid-template-rows: repeat(18,1fr);
   grid-template-columns: repeat(18,1fr);
 }
 
 .head{
-  background:radial-gradient(rgb(138, 0, 0),rgb(238, 0, 0));
-  border: 2px solid rgb(194, 0, 0);
-  transform: scale(1.02);
-  border-radius: 9px;
-}
+   /* background:radial-gradient(rgb(238, 135, 226),rgb(201, 19, 177));  */
+   background:radial-gradient(rgb(218, 122, 216),rgb(234, 7, 241));
+
+  border-radius: 20%;
+} 
 
 .snake{
-  background:radial-gradient(rgb(167, 236, 167),rgb(11, 128, 0));
-  border: 0.25vmin solid white;
-  border-radius: 12px;
+  background:radial-gradient(rgb(214, 187, 65),rgb(155, 133, 34));
+  /* border: 0.25vmin solid white; */
+  border-radius: 20px;
 }
 
 .food{
-  background-color: orange;
-  border: 00.25vmin solid rgb(255, 102, 0);
+  background-color: rgb(220, 149, 44);
+  border: 00.25vmin solid rgba(220, 150, 44, 0.34); 
   border-radius: 50%;
-  box-shadow: 0px 0px 6px 6px rgb(255, 238, 0);
+ box-shadow: 0px 0px 5px 5px rgba(233, 177, 94, 0.401); 
 }
 
 
